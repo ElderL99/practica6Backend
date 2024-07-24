@@ -1,5 +1,5 @@
 const fs = require('fs');
-const path = './koders.json';  // Usamos koders.json como archivo de datos
+const path = './koders.json'; 
 
 const command = process.argv[2];
 const koderName = process.argv[3];
