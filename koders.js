@@ -22,14 +22,22 @@ switch (command) {
 }
 
 function addKoder(name) {
+    if (!name) {
+        console.log('Por favor, ingresa un nombre para agregar un koder.');
+        return;
+    }
     const koders = readKoders();
     if (!Array.isArray(koders)) {
         console.error('Error: el contenido de koders.json no es un arreglo.');
         return;
     }
-    koders.push({ name });
-    saveKoders(koders);
-    console.log(`Koder ${name} agregado.`);
+    if (isNaN(name)) {
+        koders.push({ name });
+        saveKoders(koders);
+        console.log(`Koder ${name} agregado.`);
+    } else {
+        console.log('Por favor, ingresa un nombre válido.');
+    }
 }
 
 function listKoders() {
@@ -47,6 +55,10 @@ function listKoders() {
 }
 
 function removeKoder(name) {
+    if (!name) {
+        console.log('Por favor, ingresa un nombre para eliminar un koder.');
+        return;
+    }
     let koders = readKoders();
     if (!Array.isArray(koders)) {
         console.error('Error: el contenido de koders.json no es un arreglo.');
