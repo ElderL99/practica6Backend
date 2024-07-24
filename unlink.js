@@ -1,3 +1,3 @@
 const fs = require('fs');
-const deleteFile = fs.unlinkSync("nuevo_archivo");
+const deleteFile = fs.unlinkSync("koders.json");
 fs.unlinkSync(deleteFile);

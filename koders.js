@@ -18,7 +18,7 @@ switch (command) {
         resetKoders();
         break;
     default:
-        console.log('Comando no reconocido');
+        console.log('Comando no reconocido 😐');
 }
 
 function addKoder(name) {
@@ -36,7 +36,7 @@ function listKoders() {
     const koders = readKoders();
     if (!Array.isArray(koders)) {
         console.error('Error: el contenido de koders.json no es un arreglo.');
-        return;
+        process.exit(0);
     }
     if (koders.length === 0) {
         console.log('No hay koders registrados.');
