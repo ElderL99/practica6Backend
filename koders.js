@@ -59,13 +59,16 @@ function removeKoder(name) {
         console.log('Por favor, ingresa un nombre para eliminar un koder.');
         return;
     }
+
     let koders = readKoders();
     if (!Array.isArray(koders)) {
         console.error('Error: el contenido de koders.json no es un arreglo.');
         return;
     }
+    
     const initialLength = koders.length;
-    koders = koders.filter(koder => koder.name !== name);
+    koders = koders.filter(koder => koder.name !== name.toLowerCase());
+
     if (koders.length === initialLength) {
         console.log(`No se encontró un koder con el nombre ${name}.`);
     } else {
